@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 0;
+  background-color: #333;
+  color: white;
+}
+* {
+  font-family: "Inter", sans-serif;
+}
+main {
+  padding: 8vw;
+}
+
+header {
+  background-image: url("https://images.unsplash.com/photo-1569933044748-ab0fa292068a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80");
+  height: 20em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header p {
+  margin: 1em;
+  font-size: 1.3em;
+}
+.lars h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+.lars p {
+  margin: -0.5em 0 2.5em 0;
+}
+
+.lars section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  column-gap: 2em;
+  margin: 1em 0 8em 0;
+}
+
+.lars section p {
+  font-size: 5em;
+  margin: 0;
+  opacity: 0.6;
+  transition: all 0.5s ease-in-out;
+}
+
+.lars section p:nth-child(2n) {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+
+.lars section p:last-child {
+  font-size: 1em;
+  font-family: "Courier New", Courier, monospace;
+  background-color: rgb(80, 80, 80);
+  padding: 1em;
+  color: white;
+  border-radius: 0.2em;
+  opacity: 1;
+}
+
+.lars div {
+  position: relative;
+}
+
+.lars section:first-of-type div:first-of-type:hover p:nth-child(2) {
+  transform: translateX(50px);
+}
+
+.lars section:first-of-type div:nth-child(2):hover p:nth-child(2) {
+  transform: translateX(-50px);
+}
+
+.lars section:first-of-type div:nth-child(3):hover p:nth-child(2) {
+  transform: translateY(50px);
+}
+
+.lars section:first-of-type div:nth-child(4):hover p:nth-child(2) {
+  transform: translateY(-50px);
+}
+
+.lars section:first-of-type div:nth-child(5):hover p:nth-child(2) {
+  transform: translate(-50px, 50px);
+}
+
+.lars section:first-of-type div:nth-child(6):hover p:nth-child(2) {
+  transform: translate(50px, -50px);
+}
+
+.lars section:first-of-type div:nth-child(7):hover p:nth-child(2) {
+  transform: scaleX(-1);
+}
+
+.lars section:first-of-type div:nth-child(8):hover p:nth-child(2) {
+  transform: scaleX(3);
+}
+
+.lars section:first-of-type div:nth-child(9):hover p:nth-child(2) {
+  transform: scaleY(3);
+}
+
+.lars section:first-of-type div:nth-child(10):hover p:nth-child(2) {
+  transform: scale(3, 5);
+}
+
+.lars section:first-of-type div:nth-child(11):hover p:nth-child(2) {
+  transform: rotate(360deg);
+}
+
+.lars section:first-of-type div:nth-child(12):hover p:nth-child(2) {
+  transform: skewX(50deg);
+}
+
+.lars section:first-of-type div:nth-child(13):hover p:nth-child(2) {
+  transform: skewY(50deg);
+}
+
+.lars section:first-of-type div:nth-child(14):hover p:nth-child(2) {
+  transform: skew(-60deg, 60deg);
+}
+
+.lars section:first-of-type div:nth-child(15):hover p:nth-child(2) {
+  transform: skew(60deg, -60deg);
+}
+
+.lars section:first-of-type div:nth-child(16):hover p:nth-child(2) {
+  transform: matrix(2, 0, 0.5, 2, 50, 0);
+}
+
+.lars section:first-of-type div:nth-child(17):hover p:nth-child(2) {
+  transform: rotate(15deg) translateX(200px);
+}
+
+.lars section:first-of-type div:nth-child(18):hover p:nth-child(2) {
+  transform: translateX(100px) rotate(35deg);
+}
+
+.lars section:first-of-type div:nth-child(19):hover p:nth-child(2) {
+  transform: skew(60deg, -60deg) skewY(50deg);
+}
+
+.lars section:first-of-type div:nth-child(20):hover p:nth-child(2) {
+  transform: scaleX(-1) skewY(50deg);
+}
+
+/* ///  */
+
+.lars section:nth-of-type(2) div:first-of-type p {
+  transition: all 1.5s ease;
+}
+
+.lars section:nth-of-type(2) div:nth-child(2) p {
+  transition: all 1.5s linear;
+}
+
+.lars section:nth-of-type(2) div:nth-child(3) p {
+  transition: all 1.5s ease-in;
+}
+
+.lars section:nth-of-type(2) div:nth-child(4) p {
+  transition: all 1.5s ease-out;
+}
+
+.lars section:nth-of-type(2) div:nth-child(5) p {
+  transition: all 1.5s ease-in-out;
+}
+
+.lars section:nth-of-type(2) div:nth-child(6) p {
+  transition: all 1.5s cubic-bezier(0.66, 0.65, 1, -0.38);
+}
+
+.lars section:nth-of-type(2) div:nth-child(7) p {
+  transition: all 1.5s ease-in-out;
+  transition-delay: 1s;
+}
+
+.lars section:nth-of-type(2) div:nth-child(8) p {
+  transition: all 5s ease;
+  transition-delay: -2s;
+}
+
+.lars section:nth-of-type(2) div:hover p:nth-child(2) {
+  transform: translateX(200px);
+}
+
+/* ///// */
+
+.loading {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  height: 60vh;
+}
+
+.loading img {
+  width: 10%;
+  animation: up-down 2s infinite;
+}
+
+.loading img:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.loading img:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading img:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.loading img:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.loading img:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.loading img:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.loading img:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.loading img:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translate(0, 0);
+    transform: rotateZ(-180deg);
+  }
+  50% {
+    transform: translate(0, 250px);
+  }
+  100% {
+    transform: translate(0, 0);
+    transform: rotateZ(180deg);
+  }
+}
+
+/* /// */
+
+:root {
+  --primary: #eeeeef;
+  --secondary: #333333;
+  --backgroundGradient: linear-gradient(
+    90deg,
+    rgba(241, 241, 241, 1) 0%,
+    rgba(213, 213, 213, 1) 100%
+  );
+  --backgroundGradientDark: linear-gradient(
+    90deg,
+    rgb(168, 158, 158) 0%,
+    rgb(63, 60, 60) 100%
+  );
+  --fontSize: 1em;
+  --fullWidth: 100%;
+  --path: "M0,0 C40,20 110,-20 150,-10";
+}
+
+.wrapper {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+img.laptop {
+  width: 100%;
+}
+
+.tentacle {
+  offset-path: path(var(--path));
+  width: 30%;
+  position: absolute;
+  animation: distance 4000ms infinite ease-in-out;
+  animation-direction: alternate;
+  z-index: -1;
+}
+
+.tentacle:first-child {
+  transform: rotate(-40deg);
+  top: 40%;
+}
+
+.tentacle:nth-child(2) {
+  animation-delay: 500ms;
+  transform: rotate(-70deg);
+  top: 60%;
+  left: 25%;
+}
+
+.tentacle:nth-child(3) {
+  animation-delay: -2000ms;
+  top: 35%;
+  left: 65%;
+  transform: scaleX(-1) rotate(-10deg);
+}
+
+.tentacle:nth-child(4) {
+  animation-delay: -1400ms;
+  transform: rotate(270deg);
+  top: 60%;
+  left: 60%;
+  transform: scaleX(-1) rotate(-45deg);
+}
+
+@keyframes distance {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.image-element {
+  width: 50vw;
+  height: 50vh;
+  transition: 0.5s all ease;
+  transform: rotateX(60deg) scale(0.7);
+}
+.image-element:hover {
+  cursor: pointer;
+  transform: rotate(0deg) scale(1.3) translateY(150px);
+  transition: 0.5s all ease;
+  z-index: 400;
+}
+
+/* /// */
+
+.card {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card div {
+  width: 500px;
+  border-radius: 18px;
+  color: black;
+}
+
+.card div section {
+  text-align: center;
+  position: relative;
+  padding: 20em 5em;
+  background: var(--backgroundGradient);
+  transition: transform 3s;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.card div:hover section {
+  transform: rotateY(0.5turn);
+}
+
+.card div section article {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.card div section article:nth-of-type(1) {
+  border-radius: 20px;
+}
+
+.card div section article:nth-of-type(2) {
+  border-radius: 20px;
+  transform: rotateY(0.5turn);
+  background: var(--backgroundGradientDark);
+  transform-style: preserve-3d;
+}
+
+.card div section article img {
+  width: 100%;
+  transform: translateZ(3em);
+}
+
+.card div section article p {
+  transform: translateZ(3em);
+}
+
+.card div section article:nth-child(1) h1,
+article:nth-child(1) h2,
+article:nth-child(1) p,
+article:nth-child(1) img {
+  transform: translateZ(3em);
+}
+
+.card div section article:nth-child(1) h1 {
+  font-size: 2.5em;
+  margin: 1em 0;
+}
+
+.card div section article:nth-child(1) h2 {
+  font-size: 1.2rem;
+  margin: 1em 0;
+}
+
+.card div section article:nth-child(2) img {
+  height: 80%;
+  width: auto;
+}
+.card div section article p {
+  margin-top: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  .card div {
+    width: 90vw;
+  }
+  .card div img {
+    max-width: 100%;
+    height: auto;
+  }
+}

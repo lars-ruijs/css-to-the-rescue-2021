@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CSS 2D Transform</title>
+</head>
+<body>
+    <header>
+        <h1>Thema: Transform & Animeren</h1>
+        <p>Jordy, Max, Guus & Lars</p>
+    </header>
+    <main>
+        <div class="lars">
+            <h2>Transform</h2>
+        <p>Hover met je muis over een squid om het transform effect in actie te zien.</p>
+        <section>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>translateX(50px);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>translateX(-50px);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>translateY(50px);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>translateY(-50px);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>translate(-50px, 50px);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>translate(50px, -50px);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>scaleX(-1);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>scaleX(3);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>scaleY(3);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>scale(3, 5);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>rotate(360deg);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>skewX(50deg);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>skewY(50deg);</p>
+            </div> 
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>skew(-60deg, 60deg);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>skew(60deg, -60deg);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>matrix(2, 0, 0.5, 2, 50, 0);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>rotate(15deg) translateX(200px);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>translateX(100px) rotate(35deg);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>skew(60deg, -60deg) skewY(50deg);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>scaleX(-1) skewY(50deg);</p>
+            </div>
+        </section>
+        <h2>Transition</h2>
+        <p>Hover met je muis over een squid om het transition effect te zien.</p>
+        <section>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>all 1.5s ease;</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>all 1.5s linear;</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>all 1.5s ease-in;</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>all 1.5s ease-out;</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>all 1.5s ease-in-out;</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>all 1.5s cubic-bezier(.66,.65,1,-0.38);</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>transition: all 1.5s ease-in-out;<br>transition-delay: 1s;</p>
+            </div>
+            <div>
+                <p>🐙</p>
+                <p>🐙</p>
+                <p>transition: all 5s ease;<br>transition-delay: -2s;</p>
+            </div>
+        </section>
+        </div>
+        <h2>Keyframes</h2>
+        <p>Animatie gemaakt met keyframes.</p>
+        <section class="loading">
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/squid_1f991.png" alt="">
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/octopus_1f419.png" alt="">
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/squid_1f991.png" alt="">
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/octopus_1f419.png" alt="">
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/squid_1f991.png" alt="">
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/octopus_1f419.png" alt="">
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/squid_1f991.png" alt="">
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/octopus_1f419.png" alt="">
+        </section> 
+
+        <h2>Keyframes en Path Clipping</h2>
+        <p>Animatie gemaakt met keyframes en Path Clipping.</p> 
+        <div class="wrapper">  
+            <section class="image-element">
+                <img class="tentacle" src="./img/tentacle.png" alt="">
+                <img class="tentacle" src="./img/tentacle.png" alt="">
+                <img class="tentacle" src="./img/tentacle.png" alt="">
+                <img class="tentacle" src="./img/tentacle.png" alt="">
+                <img class="laptop" src="https://cdn.pixabay.com/photo/2020/06/26/13/20/macbook-pro-5342709_1280.png" alt="" />
+            </section>   
+        </div> 
+
+        <h2>Transform animatie</h2>
+        <p>Animatie is gemaakt met preserve-3D en translate-z.</p> 
+        <div class="wrapper">
+            <section class="card">
+                <div>
+                  <section>
+                    <article>
+                      <!-- Image retrieved from: https://cdn.pixabay.com/photo/2020/06/26/13/20/macbook-pro-5342709_1280.png-->
+                      <img src="https://cdn.pixabay.com/photo/2020/06/26/13/20/macbook-pro-5342709_1280.png" alt="" />
+                      <h1>Apple Macbook Pro</h1>
+                      <h2>Apple M1‑chip met 8‑core CPU en 7‑core GPU 256 GB opslag</h2>
+                      <p>Kies de gewenste uitvoering van je MacBook Pro.</p>
+                    </article>
+          
+                    <article>
+                      <!-- Image retrieved from: https://cdn.pixabay.com/photo/2020/06/26/13/20/macbook-pro-5342709_1280.png-->
+                      <img src="./img/qr.png" alt="" />
+          
+                      <p>Scan the QR code for all the available information about this product.</p>
+                    </article>
+                  </section>
+                </div>
+              </section>
+        </div> 
+    </main>
+</body>
+</html>
