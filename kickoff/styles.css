@@ -1,15 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+:root {
+  --primary: #eeeeef;
+  --secondary: #333333;
+  --backgroundGradient: linear-gradient(
+    90deg,
+    rgba(241, 241, 241, 1) 0%,
+    rgba(213, 213, 213, 1) 100%
+  );
+  --backgroundGradientDark: linear-gradient(
+    90deg,
+    rgb(168, 158, 158) 0%,
+    rgb(63, 60, 60) 100%
+  );
+  --fontSize: 1em;
+  --fullWidth: 100%;
+  --path: "M0,0 C40,20 110,-20 150,-10";
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
 body {
   margin: 0;
   background-color: #333;
   color: white;
-}
-* {
-  font-family: "Inter", sans-serif;
-}
-main {
-  padding: 8vw;
 }
 
 header {
@@ -28,13 +44,19 @@ header p {
   margin: 1em;
   font-size: 1.3em;
 }
-.lars h1 {
-  margin: 0;
-  font-size: 3em;
+
+main {
+  padding: 8vw;
 }
+
+/* Transform door Lars */
 
 .lars p {
   margin: -0.5em 0 2.5em 0;
+}
+
+.lars div {
+  position: relative;
 }
 
 .lars section {
@@ -66,10 +88,6 @@ header p {
   color: white;
   border-radius: 0.2em;
   opacity: 1;
-}
-
-.lars div {
-  position: relative;
 }
 
 .lars section:first-of-type div:first-of-type:hover p:nth-child(2) {
@@ -152,7 +170,7 @@ header p {
   transform: scaleX(-1) skewY(50deg);
 }
 
-/* ///  */
+/* Transition door Lars */
 
 .lars section:nth-of-type(2) div:first-of-type p {
   transition: all 1.5s ease;
@@ -192,7 +210,7 @@ header p {
   transform: translateX(200px);
 }
 
-/* ///// */
+/* Keyframe (loading) animatie door Max */
 
 .loading {
   display: block;
@@ -252,25 +270,7 @@ header p {
   }
 }
 
-/* /// */
-
-:root {
-  --primary: #eeeeef;
-  --secondary: #333333;
-  --backgroundGradient: linear-gradient(
-    90deg,
-    rgba(241, 241, 241, 1) 0%,
-    rgba(213, 213, 213, 1) 100%
-  );
-  --backgroundGradientDark: linear-gradient(
-    90deg,
-    rgb(168, 158, 158) 0%,
-    rgb(63, 60, 60) 100%
-  );
-  --fontSize: 1em;
-  --fullWidth: 100%;
-  --path: "M0,0 C40,20 110,-20 150,-10";
-}
+/* Keyframe animatie met path clipping door Guus */
 
 .wrapper {
   text-align: center;
@@ -338,7 +338,7 @@ img.laptop {
   z-index: 400;
 }
 
-/* /// */
+/* Transform animatie met preserve-3D en translate-z door Jordy */
 
 .card {
   display: grid;
