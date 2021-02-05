@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Megrim&family=Sacramento&family=Yellowtail&display=swap");
+
+@font-face {
+  font-family: "Neonlight";
+  src: url("fonts/hellodenverdisplayregular_v1.6.woff") format("woff"),
+    url("fonts/hellodenverdisplayregular_v1.6.ttf") format("truetype");
+}
+
+body {
+  background-color: black;
+}
+
+header h1 {
+  font-family: "Neonlight", sans-serif;
+  text-transform: uppercase;
+  font-size: 8em;
+  color: #f6fffb;
+  margin: 0;
+  text-shadow: 0.1vw 0 0.25vw #f6fffb, 0.2vw 0 0.25vw #f6fffb, 0.1vw 0 0 #f6fffb,
+    0.2vw 0 0 #06dff8, 0.4vw 0 0 #06dff8, 0.1vw 0 0.1vw #06dff8,
+    0.2vw 0 0.1vw #06dff8, 0.4vw 0 0.1vw #06dff8, 0.1vw 0 2vw #06dff8,
+    0.2vw 0 2vw #06dff8, 0.4vw 0 2vw #06dff8, 0.1vw 0 1vw #0b0fe5,
+    0.2vw 0 1vw #0b0fe5, 0.4vw 0 5vw #0b0fe5, 0.1vw 0 5vw #0b0fe5,
+    0.2vw 0 10vw #0b0fe5, 0.4vw 0 5vw #0b0fe5, 0.1vw 0 5vw #0b0fe5,
+    0.2vw 0 20vw #0b0fe5, 0.4vw 0 5vw #0b0fe5;
+}
+
+body header:first-of-type:not(main section header) {
+  text-align: center;
+}
+
+body header:first-of-type:not(main section header) p {
+  font-family: "Yellowtail", sans-serif;
+  font-size: 8em;
+  color: #ffd93a;
+  margin: 0;
+  text-shadow: 0.1vw 0 0.25vw #ffd93a, 0.2vw 0 0.25vw #ffd93a, 0.1vw 0 0 #ffd93a,
+    0.2vw 0 0 #ff4e04, 0.4vw 0 0 #ff4e04, 0.1vw 0 0.1vw #ff4e04,
+    0.2vw 0 0.1vw #ff4e04, 0.4vw 0 0.1vw #ff4e04, 0.1vw 0 2vw #ff4e04,
+    0.2vw 0 2vw #ff4e04, 0.4vw 0 2vw #ff4e04, 0.1vw 0 1vw #e53e0b,
+    0.2vw 0 1vw #e53e0b, 0.4vw 0 5vw #e53e0b, 0.1vw 0 5vw #e53e0b,
+    0.2vw 0 20vw #e53e0b, 0.4vw 0 10vw #e53e0b, 0.1vw 0 10vw #e53e0b,
+    0.2vw 0 30vw #e53e0b, 0.4vw 0 10vw #e53e0b;
+}
+
+main section header {
+  color: white;
+}
+
+/* header h1 span:nth-of-type(2) {
+  font-family: "Sacramento", sans-serif;
+  font-size: 1.2em;
+} */
