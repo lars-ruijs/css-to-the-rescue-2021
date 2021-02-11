@@ -31,7 +31,7 @@ header:first-of-type:not(main section header) {
   margin-bottom: 15em;
 }
 header section {
-  margin-top: clamp(15em, 26.5vw, 38em);
+  margin-top: clamp(14em, 26.5vw, 38em);
   z-index: -1;
   width: 100%;
   height: 100%;
@@ -112,7 +112,7 @@ header h1 span:nth-of-type(3) {
 }
 
 header:first-of-type:not(main section header) p {
-  font: 400 clamp(2.8em, 6vw, 8em) "Yellowtail";
+  font: 400 clamp(2.4em, 6vw, 8em) "Yellowtail";
   letter-spacing: 0.25em;
   color: hsl(0, 0%, 100%);
   margin: 0;
