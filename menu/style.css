@@ -1,12 +1,15 @@
+/* Megrim, Sacramento, Yellowtail and Vibur fonts via Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Megrim&family=Sacramento&family=Yellowtail&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Vibur");
 
+/* Hello Denver font by "Good Apples" via 1001fonts.com */
 @font-face {
   font-family: "Neonlight";
   src: url("fonts/hellodenverdisplayregular_v1.6.woff") format("woff"),
     url("fonts/hellodenverdisplayregular_v1.6.ttf") format("truetype");
 }
 
+/* Default neon shadow (used for text). 2 colors: hsl(182, 100%, 63%) and hsl(239, 91%, 47%) */
 :root {
   --neon-shadow: 0.1vw 0 0.25vw hsl(0, 0%, 100%),
     0.2vw 0 0.25vw hsl(0, 0%, 100%), 0.1vw 0 0 hsl(0, 0%, 100%),
@@ -19,22 +22,25 @@
     0.2vw 0 10vw hsl(239, 91%, 47%), 0.4vw 0 5vw hsl(239, 91%, 47%),
     0.1vw 0 5vw hsl(239, 91%, 47%), 0.2vw 0 20vw hsl(239, 91%, 47%),
     0.4vw 0 5vw hsl(239, 91%, 47%);
+
+  --filter: none;
 }
 
 body {
-  background-color: hsl(0, 0%, 0%);
   margin: 0;
-  color: white;
+  background-color: hsl(0, 0%, 0%);
 }
+
+/* First header (with logo) */
 header:first-of-type:not(main section header) {
   text-align: center;
-  margin-bottom: 15em;
 }
+
+/* Section with rectangles (for logo) */
 header section {
-  margin-top: clamp(14em, 26.5vw, 38em);
-  z-index: -1;
   width: 100%;
   height: 100%;
+  margin-top: clamp(13em, 26.5vw, 38em);
   position: relative;
   display: flex;
   align-items: center;
@@ -43,75 +49,86 @@ header section {
   animation: perspective 5s ease-in-out infinite;
 }
 
+/* Logo rectangles */
 header section div {
   width: clamp(17em, 35vw, 50em);
   height: clamp(17em, 35vw, 50em);
   position: absolute;
-  border: 5px white solid;
-  border-radius: 50px;
+  border: 5px hsl(0, 0%, 100%) solid;
+  border-radius: 3em;
   box-shadow: 0.1vw 0 0.25vw hsl(0, 0%, 100%),
     inset 0.1vw 0 0.25vw hsl(0, 0%, 100%), 0.2vw 0 3vw hsl(182, 100%, 63%),
     inset 0.2vw 0 0.3vw hsl(182, 100%, 63%), 0.4vw 0 4vw hsl(239, 91%, 47%),
     inset 0.4vw 0 4vw hsl(239, 91%, 47%);
+
+  /* Using filter hue-rotate and saturate to create different color */
   filter: hue-rotate(227deg) saturate(4);
-  animation: blink 5s ease-out infinite;
+  animation: electric 5s ease-out infinite;
+  background-color: hsl(0, 0%, 0%);
 }
 
+/* The seven logo rectangles start their animation with different delays. Change their translating.  */
 header section div:nth-child(1) {
   transform: rotate(45deg) translateY(0) translateZ(0);
   animation-delay: 0.2s;
 }
 
 header section div:nth-child(2) {
-  transform: rotate(45deg) translateY(15px) translateX(5px) translateZ(-5px);
+  transform: rotate(45deg) translateY(15px) translateX(10px) translateZ(-5px);
   animation-delay: 0.3s;
 }
 
 header section div:nth-child(3) {
-  transform: rotate(45deg) translateY(30px) translateX(5px) translateZ(-10px);
+  transform: rotate(45deg) translateY(30px) translateX(15px) translateZ(-10px);
   animation-delay: 0.3s;
 }
 
 header section div:nth-child(4) {
-  transform: rotate(45deg) translateY(45px) translateX(5px) translateZ(-15px);
+  transform: rotate(45deg) translateY(45px) translateX(20px) translateZ(-15px);
   animation-delay: 0.4s;
 }
 
 header section div:nth-child(5) {
-  transform: rotate(45deg) translateY(60px) translateX(5px) translateZ(-20px);
+  transform: rotate(45deg) translateY(60px) translateX(30px) translateZ(-20px);
   animation-delay: 0.5s;
 }
 
 header section div:nth-child(6) {
-  transform: rotate(45deg) translateY(75px) translateX(5px) translateZ(-25px);
+  transform: rotate(45deg) translateY(75px) translateX(35px) translateZ(-25px);
   animation-delay: 0.6s;
 }
 
 header section div:nth-child(7) {
-  transform: rotate(45deg) translateY(90px) translateX(5px) translateZ(-30px);
+  transform: rotate(45deg) translateY(90px) translateX(40px) translateZ(-30px);
   animation-delay: 0.7s;
 }
 
+/* Header logo name "Russ and Daughters" */
 header h1 {
   font: 400 clamp(3.2em, 8vw, 10em) "Neonlight";
   color: hsl(0, 0%, 100%);
   text-transform: uppercase;
   text-shadow: var(--neon-shadow);
-  margin-bottom: 0;
   margin-top: -0.5em;
+  margin-bottom: 0;
+  z-index: 999;
 }
+
+/* Set animations to individual span elements */
 header h1 span {
-  animation: blink linear infinite 2s;
+  animation: electric linear infinite 2s;
 }
 header h1 span:nth-of-type(2) {
-  animation: blink linear infinite 1s;
+  animation: electric linear infinite 1s;
 }
 
 header h1 span:nth-of-type(3) {
-  animation: blink linear infinite 3s;
+  animation: electric linear infinite 3s;
 }
 
+/* Tagline "Best food in town" */
 header:first-of-type:not(main section header) p {
+  z-index: 999;
   font: 400 clamp(2.4em, 6vw, 8em) "Yellowtail";
   letter-spacing: 0.25em;
   color: hsl(0, 0%, 100%);
@@ -121,11 +138,85 @@ header:first-of-type:not(main section header) p {
   animation: blinking linear infinite 1s;
 }
 
+header div:not(header section div) {
+  background: linear-gradient(
+    90deg,
+    hsl(0, 0%, 100%) -60%,
+    hsl(0, 0%, 0%) 30%,
+    hsl(0, 0%, 0%) 50%,
+    hsl(0, 0%, 0%) 50%,
+    hsl(0, 0%, 0%) 70%,
+    hsl(0, 0%, 100%) 160%
+  );
+  height: clamp(10em, 170vw, 80em);
+  width: clamp(5.5em, 8vw, 8em);
+  margin: 0 auto;
+  z-index: -999;
+}
+
+main {
+  margin: 0 auto;
+  margin-top: max(-125vw, -55em);
+  background-color: hsl(0, 0%, 0%);
+  width: clamp(15em, 45vw, 50em);
+  height: clamp(25em, 45vw, 50em);
+  overflow: scroll;
+  /* box-shadow: 0.1vw 0 0.25em hsl(0, 0%, 100%),
+    inset 0.1vw 0 0.25em hsl(0, 0%, 100%), 0.2vw 0 2.5em hsl(0, 0%, 100%),
+    inset 0.2vw 0 0.3em hsl(0, 0%, 100%), 0.4vw 0 4em hsl(0, 0%, 0%),
+    inset 0.1vw 0 1.5em hsl(0, 0%, 0%); */
+  border: 5px solid hsl(0, 0%, 100%);
+  box-shadow: 0.1vw 0 0.25vw hsl(0, 0%, 100%),
+    inset 0.1vw 0 0.25vw hsl(0, 0%, 100%), 0.2vw 0 3vw hsl(182, 100%, 63%),
+    inset 0.2vw 0 0.3vw hsl(182, 100%, 63%), 0.5vw 0 5vw hsl(239, 91%, 47%),
+    inset 0.1vw 0 1vw hsl(239, 91%, 47%);
+  padding: 3em;
+  color: white;
+}
+
+main section header {
+  position: relative;
+  margin-bottom: 5em;
+}
+
+main section header p {
+  font-family: "Vibur";
+  text-transform: uppercase;
+  margin: -0.2em 0;
+  letter-spacing: 0.45em;
+}
+
+main section h2 {
+  text-transform: lowercase;
+  color: hsl(0, 0%, 100%);
+  font: 400 clamp(2.4em, 6vw, 8em) "Yellowtail";
+  text-shadow: var(--neon-shadow);
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+main section:nth-of-type(2n) header {
+  filter: hue-rotate(427deg);
+}
+
+main section:nth-of-type(3n) header {
+  filter: hue-rotate(227deg);
+}
+
+main section header::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background: white;
+  position: absolute;
+  bottom: -1.4em;
+  left: 0;
+  box-shadow: var(--neon-shadow);
+}
+
+/* Blinking animation for tagline */
 @keyframes blinking {
-  /* to {
-    filter: brightness(0.25);
-    text-shadow: none;
-  } */
   0% {
     filter: hue-rotate(156deg) saturate(5);
     text-shadow: var(--neon-shadow);
@@ -140,7 +231,9 @@ header:first-of-type:not(main section header) p {
     text-shadow: var(--neon-shadow);
   }
 }
-@keyframes blink {
+
+/* Electric blinking/malfunction effect  */
+@keyframes electric {
   78% {
     filter: none;
     text-shadow: inherit;
@@ -173,6 +266,7 @@ header:first-of-type:not(main section header) p {
   }
 }
 
+/* Change perspective for zooming effect */
 @keyframes perspective {
   0% {
     perspective: 10px;
@@ -184,72 +278,3 @@ header:first-of-type:not(main section header) p {
     perspective: 10px;
   }
 }
-
-/* header h1 {
-  font-family: "Neonlight", sans-serif;
-  text-transform: uppercase;
-  font-size: 8em;
-  color: var(--color);
-  margin: 0;
-  text-shadow: var(--text-shadow-1);
-}
-
-body header:first-of-type:not(main section header) {
-  text-align: center;
-} */
-
-/* body header:first-of-type:not(main section header) p {
-  font-family: "Yellowtail", sans-serif;
-  text-transform: uppercase;
-  font-size: 6em;
-  color: var(--color);
-  margin: 0.3em;
-  text-shadow: var(--text-shadow-2);
-  filter: hue-rotate(156deg) saturate(6);
-}
-
-main section header {
-  color: white;
-} */
-
-/* header h1 span:nth-of-type(2) {
-  font-family: "Sacramento", sans-serif;
-  font-size: 1.2em;
-} */
-
-/* header h1 span:nth-of-type(2n) {
-  animation: blink linear infinite 2s;
-} */
-
-/* @keyframes blink {
-  78% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  79% {
-    filter: brightness(0.1);
-  }
-  80% {
-    text-shadow: none;
-  }
-  81% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  82% {
-    filter: brightness(0.1);
-    text-shadow: none;
-  }
-  83% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  92% {
-    filter: brightness(0.1);
-    text-shadow: none;
-  }
-  92.5% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-} */
