@@ -1,5 +1,5 @@
 /* Megrim, Sacramento, Yellowtail and Vibur fonts via Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Megrim&family=Sacramento&family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Megrim&family=Sacramento&family=Yellowtail&family=Limelight&family=Poiret+One&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Vibur");
 
 /* Hello Denver font by "Good Apples" via 1001fonts.com */
@@ -22,8 +22,12 @@
     0.2vw 0 10vw hsl(239, 91%, 47%), 0.4vw 0 5vw hsl(239, 91%, 47%),
     0.1vw 0 5vw hsl(239, 91%, 47%), 0.2vw 0 20vw hsl(239, 91%, 47%),
     0.4vw 0 5vw hsl(239, 91%, 47%);
-
-  --filter: none;
+  /* --filter-purple: hue-rotate(427deg) saturate(2);
+  --filter-red: hue-rotate(156deg) saturate(5);
+  --filter-green: hue-rotate(227deg) saturate(4); */
+  --filter-purple: none;
+  --filter-red: none;
+  --filter-green: none;
 }
 
 body {
@@ -47,7 +51,7 @@ header section {
   align-items: center;
   justify-content: center;
   perspective: 18px;
-  animation: perspective 5s ease-in-out infinite;
+  /* animation: perspective 5s ease-in-out infinite; */
 }
 
 /* Logo rectangles */
@@ -63,9 +67,8 @@ header section div {
     inset 0.4vw 0 4vw hsl(239, 91%, 47%);
 
   /* Using filter hue-rotate and saturate to create different color */
-  filter: hue-rotate(227deg) saturate(4);
-  animation: electric 5s ease-out infinite;
-  background-color: hsl(0, 0%, 0%);
+  filter: var(--filter-green);
+  /* animation: electric 5s ease-out infinite; */
 }
 
 /* The seven logo rectangles start their animation with different delays. Change their translating.  */
@@ -116,14 +119,14 @@ header h1 {
 
 /* Set animations to individual span elements */
 header h1 span {
-  animation: electric linear infinite 2s;
+  /* animation: electric linear infinite 2s; */
 }
 header h1 span:nth-of-type(2) {
-  animation: electric linear infinite 1s;
+  /* animation: electric linear infinite 1s; */
 }
 
 header h1 span:nth-of-type(3) {
-  animation: electric linear infinite 3s;
+  /* animation: electric linear infinite 3s; */
 }
 
 /* Tagline "Best food in town" */
@@ -133,11 +136,11 @@ header:first-of-type:not(main section header) p {
   color: hsl(0, 0%, 100%);
   margin: 0;
   text-shadow: var(--neon-shadow);
-  filter: hue-rotate(156deg) saturate(5);
-  animation: blinking linear infinite 1s;
+  filter: var(--filter-red);
+  /* animation: blinking linear infinite 1s; */
 }
 
-header div:not(header section div) {
+/* header div:not(header section div) {
   background: linear-gradient(
     90deg,
     hsl(0, 0%, 100%) -60%,
@@ -152,19 +155,19 @@ header div:not(header section div) {
   margin: 0 auto;
   z-index: -2;
   position: relative;
-}
+} */
 
-main {
+/* main {
   margin: 0 auto;
-  margin-top: max(-125vw, -55em);
+  margin-top: 20em;
   background-color: hsl(0, 0%, 0%);
   width: clamp(15em, 45vw, 50em);
   height: clamp(25em, 45vw, 50em);
   overflow: scroll;
-  /* box-shadow: 0.1vw 0 0.25em hsl(0, 0%, 100%),
+  box-shadow: 0.1vw 0 0.25em hsl(0, 0%, 100%),
     inset 0.1vw 0 0.25em hsl(0, 0%, 100%), 0.2vw 0 2.5em hsl(0, 0%, 100%),
     inset 0.2vw 0 0.3em hsl(0, 0%, 100%), 0.4vw 0 4em hsl(0, 0%, 0%),
-    inset 0.1vw 0 1.5em hsl(0, 0%, 0%); */
+    inset 0.1vw 0 1.5em hsl(0, 0%, 0%);
   border: 5px solid hsl(0, 0%, 100%);
   box-shadow: 0.1vw 0 0.25vw hsl(0, 0%, 100%),
     inset 0.1vw 0 0.25vw hsl(0, 0%, 100%), 0.2vw 0 3vw hsl(182, 100%, 63%),
@@ -172,12 +175,13 @@ main {
     inset 0.1vw 0 1vw hsl(239, 91%, 47%);
   padding: 3em;
   color: white;
+  border-radius: 3em;
 }
 
 main section header {
   position: relative;
   margin-bottom: 5em;
-}
+} 
 
 main section header p {
   font-family: "Vibur";
@@ -214,11 +218,183 @@ main section header::after {
   left: 0;
   box-shadow: var(--neon-shadow);
 }
+*/
+
+main {
+  margin-top: 15em;
+  padding: 0 4vw;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  margin-bottom: 20em;
+}
+
+main section {
+  transition: all 2s ease-in-out;
+}
+
+main section {
+  box-shadow: 0.1vw 0 0.25vw hsl(0, 0%, 100%),
+    inset 0.1vw 0 0.25vw hsl(0, 0%, 100%), 0.2vw 0 3vw hsl(182, 100%, 63%),
+    inset 0.2vw 0 0.3vw hsl(182, 100%, 63%), 0.5vw 0 5vw hsl(239, 91%, 47%),
+    inset 0.1vw 0 1vw hsl(239, 91%, 47%);
+  border: 5px solid hsl(0, 0%, 100%);
+  padding: 2.5em 1em;
+  height: 6em;
+  width: 9em;
+  border-radius: 50%;
+  text-align: center;
+  filter: saturate(2);
+  transform: skew(-20deg);
+}
+
+main section h2 {
+  text-transform: lowercase;
+  color: hsl(0, 0%, 100%);
+  font: 400 clamp(2.4em, 2vw, 8em) "Yellowtail";
+  text-shadow: var(--neon-shadow);
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+main section header:hover {
+  cursor: pointer;
+}
+
+main section header p {
+  font-family: "Limelight";
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.4em;
+  font-size: 0.9em;
+  color: hsl(0, 0%, 100%);
+}
+
+main section:nth-of-type(2n) {
+  filter: var(--filter-purple);
+  border-radius: 0;
+  transform: skew(-30deg);
+}
+
+main section:nth-of-type(3n) {
+  filter: var(--filter-green);
+  transform: skewX(30deg);
+  border-radius: 2em;
+}
+
+main section article,
+main section blockquote {
+  display: none;
+}
+
+/* If menu header selected (checked), transform to normal and show 100% width and height */
+input[type="checkbox"]:first-of-type:checked ~ main section:first-of-type,
+input[type="checkbox"]:nth-of-type(2):checked ~ main section:nth-of-type(2),
+input[type="checkbox"]:nth-of-type(3):checked ~ main section:nth-of-type(3),
+input[type="checkbox"]:nth-of-type(4):checked ~ main section:nth-of-type(4),
+input[type="checkbox"]:nth-of-type(5):checked ~ main section:nth-of-type(5),
+input[type="checkbox"]:nth-of-type(6):checked ~ main section:nth-of-type(6),
+input[type="checkbox"]:nth-of-type(7):checked ~ main section:nth-of-type(7) {
+  flex-grow: 1;
+  transform: none;
+  height: 100%;
+}
+
+/* If menu header selected (checked), show food items (articles and quotes) */
+input[type="checkbox"]:first-of-type:checked
+  ~ main
+  section:first-of-type
+  article,
+input[type="checkbox"]:first-of-type:checked
+  ~ main
+  section:first-of-type
+  blockquote,
+input[type="checkbox"]:nth-of-type(2):checked
+  ~ main
+  section:nth-of-type(2)
+  article,
+input[type="checkbox"]:nth-of-type(2):checked
+  ~ main
+  section:nth-of-type(2)
+  blockquote,
+input[type="checkbox"]:nth-of-type(3):checked
+  ~ main
+  section:nth-of-type(3)
+  article,
+input[type="checkbox"]:nth-of-type(3):checked
+  ~ main
+  section:nth-of-type(3)
+  blockquote,
+input[type="checkbox"]:nth-of-type(4):checked
+  ~ main
+  section:nth-of-type(4)
+  article,
+input[type="checkbox"]:nth-of-type(4):checked
+  ~ main
+  section:nth-of-type(4)
+  blockquote,
+input[type="checkbox"]:nth-of-type(5):checked
+  ~ main
+  section:nth-of-type(5)
+  article,
+input[type="checkbox"]:nth-of-type(5):checked
+  ~ main
+  section:nth-of-type(5)
+  blockquote,
+input[type="checkbox"]:nth-of-type(6):checked
+  ~ main
+  section:nth-of-type(6)
+  article,
+input[type="checkbox"]:nth-of-type(6):checked
+  ~ main
+  section:nth-of-type(6)
+  blockquote,
+input[type="checkbox"]:nth-of-type(7):checked
+  ~ main
+  section:nth-of-type(7)
+  article,
+input[type="checkbox"]:nth-of-type(7):checked
+  ~ main
+  section:nth-of-type(7)
+  blockquote {
+  display: block;
+}
+
+input[type="checkbox"]:first-of-type:checked
+  ~ main
+  section:not(main section:first-of-type),
+input[type="checkbox"]:nth-of-type(2):checked
+  ~ main
+  section:not(main section:nth-of-type(2)),
+input[type="checkbox"]:nth-of-type(3):checked
+  ~ main
+  section:not(main section:nth-of-type(3)),
+input[type="checkbox"]:nth-of-type(4):checked
+  ~ main
+  section:not(main section:nth-of-type(4)),
+input[type="checkbox"]:nth-of-type(5):checked
+  ~ main
+  section:not(main section:nth-of-type(5)),
+input[type="checkbox"]:nth-of-type(6):checked
+  ~ main
+  section:not(main section:nth-of-type(6)),
+input[type="checkbox"]:nth-of-type(7):checked
+  ~ main
+  section:not(main section:nth-of-type(7)) {
+  position: absolute;
+  transition-delay: -2s;
+  transform: scale(-1);
+  width: 0;
+  height: 0;
+  font-size: 0;
+  top: 0;
+  opacity: 0;
+}
 
 /* Blinking animation for tagline */
 @keyframes blinking {
   0% {
-    filter: hue-rotate(156deg) saturate(5);
+    filter: var(--filter-red);
     text-shadow: var(--neon-shadow);
   }
   25% {
@@ -227,7 +403,7 @@ main section header::after {
   }
   50%,
   100% {
-    filter: hue-rotate(156deg) saturate(5);
+    filter: var(--filter-red);
     text-shadow: var(--neon-shadow);
   }
 }
