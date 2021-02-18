@@ -29,10 +29,13 @@
   --filter-red: none;
   --filter-green: none; */
 }
-
+html {
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   background-color: hsl(0, 0%, 0%);
+  overflow-x: hidden;
 }
 
 /* First header (with logo) */
@@ -225,8 +228,8 @@ input[type="checkbox"] {
 }
 
 main {
-  margin-top: 25em;
-  padding: 0 4vw;
+  margin-top: clamp(10em, 26vw, 26em);
+  padding: 0 clamp(1em, 10vw, 4em);
   display: flex;
   position: relative;
   flex-wrap: wrap;
@@ -240,8 +243,8 @@ main section {
     inset 0.1vw 0 1vw hsl(239, 91%, 47%);
   border: 5px solid hsl(0, 0%, 100%);
   padding: 2.5em 1em;
-  height: 6em;
-  width: 9em;
+  height: clamp(3em, 6.5vw, 9em);
+  width: clamp(4em, 10vw, 9em);
   border-radius: 50%;
   text-align: center;
   filter: saturate(2);
@@ -266,18 +269,17 @@ main section header:hover {
 main section header h2 {
   text-transform: lowercase;
   color: hsl(0, 0%, 100%);
-  font: 400 clamp(2.4em, 2vw, 8em) "Yellowtail";
+  font: 400 clamp(1.1em, 2.5vw, 3em) "Yellowtail";
   text-shadow: var(--neon-shadow);
   letter-spacing: 0.2em;
   margin: 0;
 }
 
 main section header p {
-  font-family: "Vibur";
+  font: 400 clamp(0.5em, 1.5vw, 0.9em) "Vibur";
   text-transform: uppercase;
   margin: 0;
   letter-spacing: 0.4em;
-  font-size: 0.9em;
   color: hsl(0, 0%, 100%);
 }
 
@@ -368,6 +370,7 @@ input[type="checkbox"]:nth-of-type(7):checked ~ main section:nth-of-type(7) {
   flex-grow: 1;
   transform: none;
   height: 100%;
+  padding: 2.5em;
 }
 
 input[type="checkbox"]:first-of-type:checked
