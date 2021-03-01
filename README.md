@@ -26,7 +26,11 @@ The first day we could start the final assignment, one of the things I started d
 Next week I will continue to design the logo. 
 
 ## Week 2
-In the first week, I created a first version of the logo. It was quite difficult to make a nice text shadow that looks like a neon light. I also used too many colors. At first I thought that it would be almost impossible to make a realistic shadow with only two colors. After a lot of trial and error, I found that a white text color and a light white "glow" around the text would work well to support the blue and light blue color. 
+In the first week, I created a first version of the logo. It was quite difficult to make a nice text shadow that looks like a neon light. I also used too many colors. At first I thought that it would be almost impossible to make a realistic shadow with only two colors. After a lot of trial and error, I found that a white text color and a light white "glow" around the text would work well to support the blue and light blue color. The text shadow is constructed by the offset/displacement of the x and y values. Then you define the degree of blur (i.e. how sharp the shadow is visible) and the color. 
+
+```css
+text-shadow: 0.1vw 0 0.25vw #fff; /* plus a lot more :) */
+```
 
 ### The logo
 To make the logo more in keeping with the theme of a 1950s dinner, I decided to put shapes around the logo. Sort of like [this](https://www.neon-light.net/proddetail.php?prod=nl-109502-the-50s-diner-circle-neon-sign) neon sign. I personally liked it better to have multiple repetitions of the shape running behind the text, like this sketch: 
@@ -101,4 +105,69 @@ Last week I had the idea of putting the menu on the pole of the drive trough sig
 | A few menu ideas | Two selected menu ideas with CSS |
 
 ### Adding interaction
-Previously, I had participated in a session on using interaction with CSS. With making the menu interactive, I used checkboxes and labels. The checkboxes are separate outside the `<main>` element. The` <header>` elements are now placed within a `<label>`, so that by clicking on a label you check the corresponding checkbox. Because the checkboxes are outside the `<main>` element, you can use the sibling selector `~` to make the `<main>` and the elements within it respond to interaction. 
+Previously, I had participated in a session on using interaction with CSS. Here I learned that you don't necessarily need JavaScript to make elements interactive. It seemed like a good point to learn more about by applying it myself. With making the menu interactive, I used checkboxes and labels. The checkboxes are separate outside the `<main>` element. The` <header>` elements are now placed within a `<label>`, so that by clicking on a label you check the corresponding checkbox. Because the checkboxes are outside the `<main>` element, you can use the sibling selector `~` to make the `<main>` and the elements within it respond to interaction. 
+
+**The checkboxes**
+```html
+<input type="checkbox" name="food" id="noshes">
+<input type="checkbox" name="food" id="boards">
+<!-- And many more -->
+```
+
+**The labels**
+
+The label-tags are placed around the header of each section. 
+
+```html
+<section>
+ <label for="noshes">
+   <header>
+     <h2>Noshes</h2>
+     <p>for tiny tummys</p>
+   </header>
+  </label>
+  <!-- More elements -->
+</section>
+```
+
+**Making the interaction work**
+
+To select the first section when the first label is clicked, I used the following selector:
+```css
+input[type="checkbox"]:first-of-type:checked ~ main section:first-of-type {
+  flex-grow: 1;
+  height: 100%;
+}
+```
+Here, the clicked section indicates that it may take up all available space. 
+
+### Removing the elements
+When a label is clicked it means that the other menu items should no longer be shown. At first I used `display: none`. The disadvantage of this is that you cannot animate this change. This made the opening and closing of menu items look very strange. After searching for other possibilities, I came up with the following:  
+
+```css
+input[type="checkbox"]:first-of-type:checked ~ main section:not(main section:first-of-type) {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  opacity: 0;
+  transform: scale(-1);
+}
+```
+
+By setting all the values for size, and thus visibility, to 0, I could still hide the elements. The only disadvantage of this was that the disappearance of the elements towards the top was also animated. To prevent this I added a negative animation delay. This causes the animation to start earlier and in this case it is not visible. 
+
+```css
+  transition-delay: -2s;
+```
+
+
+### Result of Week 3
+To better match the labels with the colorful logo, I also applied CSS filters to the labels. I captured the end result of what the interaction looks like as a gif: 
+
+![interaction with menu items](https://user-images.githubusercontent.com/60745347/109490189-2df36980-7a88-11eb-83ed-3c2ebfbfda7a.gif)
+
+
+### Change in context 
+After the feedback at the end of week 3, I decided to change my context. Initially, I thought about designing "prefers-color-scheme" or "print" for the context. Because my site is rather heavy on your computer, my teacher Vasilis came up with the suggestion to look at available media queries for something like low-end devices or people who want to use less battery. 
