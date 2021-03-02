@@ -269,7 +269,7 @@ main section header:hover {
   cursor: pointer;
 }
 
-/* Name of menu items */
+/* Title of menu items (e.g. Noshes) */
 main section header h2 {
   margin: 0;
   font: 400 clamp(1.1em, 2.5vw, 3em) var(--sub-heading);
@@ -279,7 +279,7 @@ main section header h2 {
   text-shadow: var(--neon-text-shadow);
 }
 
-/* Tagline of menu items */
+/* Tagline of menu items (e.g. Tiny dishes) */
 main section header p {
   margin: 0;
   font: 400 clamp(0.5em, 1vw, 0.7em) var(--body-text);
@@ -298,7 +298,7 @@ main section blockquote {
   display: none;
 }
 
-/* Tagline of menu items */
+/* Article (menu) content */
 main section article {
   margin: 4em 0;
   padding: 2em;
@@ -328,7 +328,7 @@ main section article div {
   text-shadow: var(--neon-text-shadow);
 }
 
-/* Quote */
+/* Quote & cite */
 main section blockquote {
   position: relative;
   width: 20vw;
@@ -367,11 +367,11 @@ main section blockquote::after {
 }
 
 main section blockquote::before {
-  top: 0;
+  top: -0.25em;
 }
 
 main section blockquote::after {
-  top: -0.6em;
+  top: -0.7em;
 }
 
 /* Neon lines before and after cite */
@@ -649,7 +649,7 @@ input[type="checkbox"]:nth-of-type(7):checked
   }
 }
 
-/* Electric blinking/malfunction effect  */
+/* "Lite" version of Electric blinking/malfunction effect (without text-shadow) */
 @keyframes electricLite {
   78% {
     filter: none;
@@ -687,7 +687,13 @@ input[type="checkbox"]:nth-of-type(7):checked
   }
 }
 
+/* ////////////////////////////////////////// */
+/*           MEDIA QUERIES (context)         */
+/* ///////////////////////////////////////// */
+
+/* When user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  /* Remove animations > make transitions slower */
   :root {
     --animation-electric: none;
     --animation-blinking: none;
@@ -696,6 +702,7 @@ input[type="checkbox"]:nth-of-type(7):checked
     --menu-transition: transform 3s ease-in-out;
   }
 
+  /* Make hover transitions more subtle */
   main section:hover {
     transform: translateY(-1em);
   }
@@ -708,6 +715,7 @@ input[type="checkbox"]:nth-of-type(7):checked
     transform: skewX(-5deg) translateY(-1em);
   }
 
+  /* Don't transition the incomming article (menu) */
   input[type="checkbox"]:first-of-type:checked ~ main section:first-of-type,
   input[type="checkbox"]:nth-of-type(2):checked ~ main section:nth-of-type(2),
   input[type="checkbox"]:nth-of-type(3):checked ~ main section:nth-of-type(3),
@@ -718,6 +726,7 @@ input[type="checkbox"]:nth-of-type(7):checked
     transition: none;
   }
 
+  /* Don't transition the reappearance of the menu headers */
   input[type="checkbox"]:first-of-type:checked
     ~ main
     section:not(main section:first-of-type),
@@ -743,6 +752,9 @@ input[type="checkbox"]:nth-of-type(7):checked
   }
 }
 
+/* If user prefers the website to reduce data ussage > used here for "lite" mode. 
+   Warning: no browser support. Test via Chrome Experimental Web Features.  
+*/
 @media (prefers-reduced-data: reduce) {
   :root {
     /* Only use local fonts */
@@ -794,41 +806,53 @@ input[type="checkbox"]:nth-of-type(7):checked
     font-size: clamp(3em, 7vw, 9em);
   }
 
-  /* All menu items */
+  /* All menu items > use light blue border */
   main section {
     border: 5px solid var(--light-blue);
   }
 
-  /* Name of menu items */
+  /* Name of menu items > change font-size and change color to light blue */
   main section header h2 {
     font: 400 clamp(1.2em, 2.6vw, 3em) var(--sub-heading);
     color: var(--light-blue);
   }
 
-  /* Text below menu item header */
+  /* Text below menu item header > change font size, letter spacing, make lowercase */
   main section header p {
     font: 400 clamp(0.5em, 1.5vw, 0.9em) var(--body-text);
-    text-transform: lowercase;
     letter-spacing: 0.3em;
+    text-transform: lowercase;
   }
 
-  /* Food item heading */
+  /* Food item heading > change color to light blue */
   main section article h3 {
     color: var(--light-blue);
   }
 
-  /* Food item description */
+  /* Food item description > make text lowercase */
   main section article p {
     text-transform: lowercase;
   }
 
-  /* Food item price */
+  /* Food item price > change color to light blue */
   main section article div {
     color: var(--light-blue);
   }
 
-  /* Quote */
+  /* Quote > change color to light blue */
   main section blockquote {
     color: var(--light-blue);
+  }
+
+  /* Neon lines before and after blockquote */
+  main section blockquote::before,
+  main section blockquote::after {
+    background: var(--light-blue);
+  }
+
+  /* Neon lines before and after cite */
+  main section blockquote cite::before,
+  main section blockquote cite::after {
+    background: var(--light-blue);
   }
 }
