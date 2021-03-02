@@ -91,8 +91,8 @@ header section {
 /* Logo rectangles */
 header section div {
   position: absolute;
-  width: clamp(17em, 35vw, 50em);
-  height: clamp(17em, 35vw, 50em);
+  width: clamp(16em, 35vw, 50em);
+  height: clamp(16em, 35vw, 50em);
   box-shadow: var(--neon-box-shadow);
   border: 5px var(--white) solid;
   border-radius: 5em;
@@ -140,7 +140,7 @@ header section div:nth-child(7) {
 /* Logo name "Russ and Daughters" */
 header h1 {
   margin: -0.5em 0 0 0;
-  font: 400 clamp(3.2em, 8vw, 10em) var(--main-heading);
+  font: 400 clamp(2.8em, 8vw, 10em) var(--main-heading);
   text-transform: uppercase;
   color: var(--white);
   text-shadow: var(--neon-text-shadow);
@@ -163,7 +163,7 @@ header h1 span:nth-of-type(3) {
 /* Tagline "Best food in town" */
 header:first-of-type:not(main section header) p {
   margin: 0;
-  font: 400 clamp(2.4em, 6vw, 8em) var(--sub-heading);
+  font: 400 clamp(2em, 6vw, 8em) var(--sub-heading);
   letter-spacing: 0.25em;
   color: var(--white);
   text-shadow: var(--neon-text-shadow);
@@ -213,6 +213,7 @@ input[type="checkbox"]:nth-of-type(7):focus-visible
 main {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   position: relative;
   margin-bottom: 10em;
   padding: 0 clamp(3em, 6vw, 6em);
@@ -220,8 +221,8 @@ main {
 
 /* All menu items */
 main section {
-  width: clamp(4em, 9.3vw, 9em);
-  height: clamp(3em, 6.3vw, 9em);
+  width: clamp(4em, 9.3vw, 15em);
+  height: clamp(3em, 6.3vw, 7em);
   padding: 2.5em 1em;
   text-align: center;
   box-shadow: var(--neon-box-shadow);
@@ -333,7 +334,7 @@ main section blockquote {
   width: 20vw;
   margin: 0 auto;
   padding: 1em 2em;
-  font: 400 1.5em var(--sub-heading);
+  font: 400 1.3em var(--sub-heading);
   text-shadow: var(--neon-text-shadow);
   font-style: italic;
   line-height: 1.8em;
