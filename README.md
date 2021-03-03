@@ -171,3 +171,61 @@ To better match the labels with the colorful logo, I also applied CSS filters to
 
 ### Change in context 
 After the feedback at the end of week 3, I decided to change my context. Initially, I thought about designing "prefers-color-scheme" or "print" for the context. Because my site is rather heavy on your computer, my teacher Vasilis came up with the suggestion to look at available media queries for something like low-end devices or people who want to use less battery. 
+
+
+## Week 4
+This week I focused on taking context into account. Last week I received feedback from Vasilis that it might be a good idea to take into account devices that have lower graphics performance or users who want to save their battery. I then started looking for suitable media queries. 
+
+### Prefers-reduced-motion
+The media query prefers-reduced-motion allows users to indicate that they prefer not to see (busy) moving elements on the website. For example because they get nauseous or want to save battery. Of course, my website is full of animations and transitions, so it should be possible to disable these in a good way. For this I first saved all the animation properties as a custom variable.
+
+```css
+  --animation-electric: electric ease-out infinite;
+  --animation-blinking: blinking linear infinite 1s;
+  --animation-perspective: perspective ease-in-out infinite 5s;
+
+  --menu-transition: all ease-in-out 1s;
+```
+
+Because these settings are now stored as custom variables, I can modify them more easily. Below you can see how I applied the media query. 
+```css
+@media (prefers-reduced-motion: reduce) {
+  /* Remove animations > make transitions slower */
+  :root {
+    --animation-electric: none;
+    --animation-blinking: none;
+    --animation-perspective: none;
+
+    --menu-transition: transform 3s ease-in-out;
+  }
+}
+```
+
+I remove the animations and make sure the transition has a longer duration, so the animation looks a little more subtle. In addition, I adjusted some hover changes so that they also look less "intense". For the flying in and disappearing of the various menu headers, I removed the transition, because it moved rather intensely. Below you can see how the interaction with the menu elements occurs when prefers-reduced-motion is enabled. Elements still respond to hover, but a lot more subtly. Opening and closing a menu element now happens instantly, without an intense animation.
+
+![opening and closing menu items](https://user-images.githubusercontent.com/60745347/109668202-37a4cc00-7b71-11eb-9fba-0c1ad108a848.gif)
+
+### Prefers-reduced-data
+In  addition to creating a version without animations, I also wanted to create a sort of "lite" version of my website. Here I thought of a piece from guest speaker Vitaly's presentation, where he talked about a completely new CSS media query called: prefers-reduced-data. According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data), the idea behind this media query for now is to consume less internet traffic. For example, because you are in an area with slow internet, because you want to save your phone's battery or have a lower-end device. So in my case it can also be used well for delivering a less intensive website. My goal here is to maintain or modify some of the functions of the website so that they are less intensive on the browser and use less data. It is important to note that this media query is currently not supported by any browser. It is still in the "editors draft" phase. In Chrome you can simulate this feature after enabling Experimental Web Features.  
+
+
+One of the things I did first was to switch to locally installed fonts. CSS only imports external fonts if they are addressed by a property. By switching from external fonts to locally available fonts, the browser does not need to download external fonts. Below you can see how I applied this: 
+
+```css
+@media (prefers-reduced-data: reduce) {
+  :root {
+    /* Only use local fonts */
+    --main-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --sub-heading: "Brush Script MT", cursive;
+    --body-text: "Bradley Hand ITC", cursive;
+}
+```
+Actually, even better would be to call the `@import` and `@font-face` only when prefers-reduced-data is equal to `no-preference`. But since there is currently no browser support for this media query, it is currently not wise to implement if you want to display your own fonts on your site.
+
+In addition to reducing the fetching of external fonts, I also wanted to optimize the site in terms of load time and make it suitable for devices with less computing power. One of the tools I used for this is [CSStriggers](https://csstriggers.com). Here you can see for many CSS properties how they affect rendering by the browser. Does it affect the layout, composition and does the browser need to repaint? Through the site I found out that changing text-shadow and box-shadow by using animations affects all three browser operations. So this is very intensive for the computer to perform. 
+
+![css triggers](https://user-images.githubusercontent.com/60745347/109674587-5312d580-7b77-11eb-85f9-084260148dc6.png)
+
+
+I then set out to find a good combination of animation while using as little computer power as possible.  
