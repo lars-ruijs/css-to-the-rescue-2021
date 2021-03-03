@@ -100,9 +100,8 @@ Since I actually liked the logo quite a bit, I thought it would be a waste to pu
 ## Week 3
 Last week I had the idea of putting the menu on the pole of the drive trough sign. After feedback, it became clear to me too that the Internet doesn't need a pole, so it was good to come up with a new idea. This I found quite difficult. I then made some sketches and a start of two sketches with CSS. Fortunately, I had scheduled the "Loose with the CSS hips" session, to get additional feedback and ideas for my concept. Here my teacher Vasilis advised me to continue with the first idea and elaborate it with interaction. I could have the menu items expand when someone clicks on a shape. 
 
-|<img alt="sketch of menu" width="30%" src="https://user-images.githubusercontent.com/60745347/109191996-086c1480-7797-11eb-95db-eb3de5dda864.JPG" /> | <img alt="sketch of menu in css" width="250%" src="https://user-images.githubusercontent.com/60745347/109192057-16ba3080-7797-11eb-861b-dca9f3c26c75.png" /> |
-|--|--|
-| A few menu ideas | Two selected menu ideas with CSS |
+<img alt="sketch of menu" width="50%" src="https://user-images.githubusercontent.com/60745347/109191996-086c1480-7797-11eb-95db-eb3de5dda864.JPG" /> 
+<img alt="sketch of menu in css" width="50%" src="https://user-images.githubusercontent.com/60745347/109192057-16ba3080-7797-11eb-861b-dca9f3c26c75.png" />
 
 ### Adding interaction
 Previously, I had participated in a session on using interaction with CSS. Here I learned that you don't necessarily need JavaScript to make elements interactive. It seemed like a good point to learn more about by applying it myself. With making the menu interactive, I used checkboxes and labels. The checkboxes are separate outside the `<main>` element. The` <header>` elements are now placed within a `<label>`, so that by clicking on a label you check the corresponding checkbox. Because the checkboxes are outside the `<main>` element, you can use the sibling selector `~` to make the `<main>` and the elements within it respond to interaction. 
@@ -206,8 +205,11 @@ I remove the animations and make sure the transition has a longer duration, so t
 ![opening and closing menu items](https://user-images.githubusercontent.com/60745347/109668202-37a4cc00-7b71-11eb-9fba-0c1ad108a848.gif)
 
 ### Prefers-reduced-data
-In  addition to creating a version without animations, I also wanted to create a sort of "lite" version of my website. Here I thought of a piece from guest speaker Vitaly's presentation, where he talked about a completely new CSS media query called: prefers-reduced-data. According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data), the idea behind this media query for now is to consume less internet traffic. For example, because you are in an area with slow internet, because you want to save your phone's battery or have a lower-end device. So in my case it can also be used well for delivering a less intensive website. My goal here is to maintain or modify some of the functions of the website so that they are less intensive on the browser and use less data. It is important to note that this media query is currently not supported by any browser. It is still in the "editors draft" phase. In Chrome you can simulate this feature after enabling Experimental Web Features.  
+In  addition to creating a version without animations, I also wanted to create a sort of "lite" version of my website. Here I thought of a piece from guest speaker Vitaly's presentation, where he shortly talked about a completely new CSS media query called: prefers-reduced-data. According to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data), the idea behind this media query (for now) is to consume less internet traffic. For example, because you are in an area with slow internet, because you want to save your phone's battery or have a lower-end device. So in my case it can also be used well for delivering a less intensive website. My goal here is to maintain or modify some of the functions of the website so that they are less intensive on the browser and use less data. It is important to note that this media query is currently not supported by any browser. It is still in the "editors draft" phase. In Chrome you can simulate this feature after enabling Experimental Web Features.  
 
+<br>
+
+**Local fonts**
 
 One of the things I did first was to switch to locally installed fonts. CSS only imports external fonts if they are addressed by a property. By switching from external fonts to locally available fonts, the browser does not need to download external fonts. Below you can see how I applied this: 
 
@@ -223,9 +225,55 @@ One of the things I did first was to switch to locally installed fonts. CSS only
 ```
 Actually, even better would be to call the `@import` and `@font-face` only when prefers-reduced-data is equal to `no-preference`. But since there is currently no browser support for this media query, it is currently not wise to implement if you want to display your own fonts on your site.
 
+<br>
+
+**Creating a "lite" version**
+
 In addition to reducing the fetching of external fonts, I also wanted to optimize the site in terms of load time and make it suitable for devices with less computing power. One of the tools I used for this is [CSStriggers](https://csstriggers.com). Here you can see for many CSS properties how they affect rendering by the browser. Does it affect the layout, composition and does the browser need to repaint? Through the site I found out that changing text-shadow and box-shadow by using animations affects all three browser operations. So this is very intensive for the computer to perform. 
 
 ![css triggers](https://user-images.githubusercontent.com/60745347/109674587-5312d580-7b77-11eb-85f9-084260148dc6.png)
 
 
-I then set out to find a good combination of animation while using as little computer power as possible.  
+I then set out to find a good combination of animation while using as little computer power as possible.  Because the use of text-shadow and box-shadow are very intensive to animate, I had to omit these effects from the animated elements. In order to still achieve a neon effect I decided to give the title and subtitle a text-shadow, but to leave out the animation. On the background of the logo I still use an animation, but without the neon shadow, so that less computer power is used. The original keyframe animation I used with the logo included text shadows. Even though this one did not apply a new shadow, the performance turned out to be better when I left it out completely. For this I created a "lite" keyframe animation:
+
+```css
+@keyframes electricLite {
+  78% {
+    filter: none;
+  }
+  79% {
+    filter: brightness(0.2);
+  }
+  /* ETC */
+```
+
+This is how the logo and its animation look like when prefers-reduced-data is enabled:
+
+![logo lite mode](https://user-images.githubusercontent.com/60745347/109803854-d8eb5b00-7c21-11eb-96e4-9d6d5a0620f1.gif)
+
+In addition to the logo, all menu elements had a text-shadow and a box-shadow. These elements have a hover transition and a transition when they flip open and out. Again, the neon shadows made these animations less smooth. Here I changed the text color to light blue and gave the elements a light blue border color. Then I applied the CSS filters to still get "bright" colors that look a bit like neon. This gave the following result: 
+
+![menu options in lite mode](https://user-images.githubusercontent.com/60745347/109808708-bd834e80-7c27-11eb-962c-4d5ec5ca9594.gif)
+
+<br>
+
+**Performance test**
+
+To check whether the "lite" version of the website is actually less intense for your computer, I ran a performance test via Chrome. Below you can see the results of it. The results on the left are from the "normal" website and on the right the "lite" version. As you can see, this version is less intense for your computer. The browser takes less time to render and the browser's "painting" process has dropped significantly: from 65ms to 2ms. Google Chrome's GPU process decreased by about 20%. When you use the site you also notice that it works a lot smoother. 
+
+<img alt="performance test" width="60%" src="https://user-images.githubusercontent.com/60745347/109810232-90d03680-7c29-11eb-8454-d580fd44bb53.png" /> 
+
+### Adding keyboard support
+To ensure that users who want to control the website with a keyboard can actually do so, I made some changes to my CSS code. Initially, I had hidden the checkboxes (which control interaction) by using `display: none`. Unfortunately, it turned out that all the interaction options could then no longer be used. I therefore had to hide the checkboxes in a different way, by using `width = 0` and `opacity = 0`. Then I was able to have the menu labels respond to the focus state of the checkboxes. To make sure that the focus state is only visible when using keyboard navigation I used `focus-visible`. This way it is as clear as possible that this is the active selection. 
+
+```css
+input[type="checkbox"]:first-of-type:focus-visible ~ main section:first-of-type {
+  margin: 0 3em;
+  transform: translateY(-3em) scale(1.3);
+  filter: hue-rotate(160deg) saturate(2) brightness(110%);
+}
+```
+
+The focus state becomes active when you move through the elements with tab. A menu section can be opened by pressing the space bar. The effect looks like this:
+
+![focus state menu items](https://user-images.githubusercontent.com/60745347/109814428-c9264380-7c2e-11eb-99dd-b549c561cc5c.gif)
