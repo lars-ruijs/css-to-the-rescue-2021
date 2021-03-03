@@ -71,8 +71,7 @@ body {
 /* First header (with logo) */
 header:first-of-type:not(main section header) {
   text-align: center;
-  margin-top: clamp(13em, 27vw, 38em);
-  margin-bottom: clamp(10em, 26vw, 26em);
+  margin: clamp(13em, 27vw, 38em) 0 clamp(10em, 26vw, 26em) 0;
 }
 
 /* Section with rectangles (for logo) */
@@ -615,7 +614,8 @@ input[type="checkbox"]:nth-of-type(7):checked
   }
 }
 
-/* Electric blinking/malfunction effect  */
+/* Electric blinking/malfunction effect */
+/* Code adapted/altered from CodePen by user "Nodws" (https://codepen.io/nodws/pen/bdjwn) */
 @keyframes electric {
   78% {
     filter: none;
@@ -650,6 +650,7 @@ input[type="checkbox"]:nth-of-type(7):checked
 }
 
 /* "Lite" version of Electric blinking/malfunction effect (without text-shadow) */
+/* Code adapted/altered from CodePen by user "Nodws" (https://codepen.io/nodws/pen/bdjwn) */
 @keyframes electricLite {
   78% {
     filter: none;
@@ -753,7 +754,8 @@ input[type="checkbox"]:nth-of-type(7):checked
 }
 
 /* If user prefers the website to reduce data ussage > used here for "lite" mode. 
-   Warning: no browser support. Test via Chrome Experimental Web Features.  
+   Warning: no browser support. Test via Chrome Experimental Web Features. 
+   Used docs & info from https://polypane.app/blog/creating-websites-with-prefers-reduced-data/  
 */
 @media (prefers-reduced-data: reduce) {
   :root {
