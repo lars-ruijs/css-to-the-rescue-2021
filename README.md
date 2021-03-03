@@ -1,9 +1,32 @@
 # CSS to the Rescue
 In the course CSS to the Rescue, you will learn about and apply new techniques of CSS in a self-selected assignment. In this case the styling of a restaurant menu for which only an HTML structure was supplied. The look of the menu is completely up to you, as long as you learn to apply new CSS techniques. To make it more challenging, you have to consider two constraints and select at least one context.   
 
-Below I have described my weekly progress:
+## ✨ View it live
+![mockup-css-site](https://user-images.githubusercontent.com/60745347/109818338-2de39d00-7c33-11eb-949a-fbe286afb259.jpg)
 
-## Week 1
+Ready to view the website yourself? You can view te site [here](https://lars-ruijs.github.io/css-to-the-rescue-2021/menu/). 
+
+<br>
+
+<hr>
+
+## 📑 Table of Contents
+Each week I recorded what I did that week. Below you can see an overview of the contents of this readme. 
+
+|  Contents |
+|---|
+| [1️⃣ Week 1](#-week-1)  |
+| [2️⃣ Week 2](#-week-2)  |
+| [3️⃣ Week 3](#-week-3) |
+| [4️⃣ Week 4](#-week-4)  |
+| [📚 Sources](#-sources) |
+| [🔗 License](#-license) |
+
+<hr>
+
+<br>
+
+## 1️⃣ Week 1
 In this first week, I have been thinking about how I want to approach the final assignment. First, I chose to style the restaurant menu. Next, I looked for inspiration online for beautiful menus and posters. In doing so, I came across a number of posters and menus with a 50s theme. I quickly thought of a typical American diner that always uses beautiful neon lighting at night. My challenge is to transform the experience of a classic diner into a semi modern interactive digital version. I promptly prepared a first draft after this:
 
 <img alt="sketch for website" width="50%" src="https://user-images.githubusercontent.com/60745347/107031073-eabc1880-67b1-11eb-9646-25b7fcc603ad.JPG" />
@@ -25,7 +48,7 @@ The first day we could start the final assignment, one of the things I started d
 
 Next week I will continue to design the logo. 
 
-## Week 2
+## 2️⃣ Week 2
 In the first week, I created a first version of the logo. It was quite difficult to make a nice text shadow that looks like a neon light. I also used too many colors. At first I thought that it would be almost impossible to make a realistic shadow with only two colors. After a lot of trial and error, I found that a white text color and a light white "glow" around the text would work well to support the blue and light blue color. The text shadow is constructed by the offset/displacement of the x and y values. Then you define the degree of blur (i.e. how sharp the shadow is visible) and the color. 
 
 ```css
@@ -97,7 +120,7 @@ Since I actually liked the logo quite a bit, I thought it would be a waste to pu
 
 <img alt="neon logo on a pole" width="50%" src="https://user-images.githubusercontent.com/60745347/109190080-04d78e00-7795-11eb-9945-42275a6ac24a.png" />
 
-## Week 3
+## 3️⃣ Week 3
 Last week I had the idea of putting the menu on the pole of the drive trough sign. After feedback, it became clear to me too that the Internet doesn't need a pole, so it was good to come up with a new idea. This I found quite difficult. I then made some sketches and a start of two sketches with CSS. Fortunately, I had scheduled the "Loose with the CSS hips" session, to get additional feedback and ideas for my concept. Here my teacher Vasilis advised me to continue with the first idea and elaborate it with interaction. I could have the menu items expand when someone clicks on a shape. 
 
 <img alt="sketch of menu" width="50%" src="https://user-images.githubusercontent.com/60745347/109191996-086c1480-7797-11eb-95db-eb3de5dda864.JPG" /> 
@@ -172,7 +195,7 @@ To better match the labels with the colorful logo, I also applied CSS filters to
 After the feedback at the end of week 3, I decided to change my context. Initially, I thought about designing "prefers-color-scheme" or "print" for the context. Because my site is rather heavy on your computer, my teacher Vasilis came up with the suggestion to look at available media queries for something like low-end devices or people who want to use less battery. 
 
 
-## Week 4
+## 4️⃣ Week 4
 This week I focused on taking context into account. Last week I received feedback from Vasilis that it might be a good idea to take into account devices that have lower graphics performance or users who want to save their battery. I then started looking for suitable media queries. 
 
 ### Prefers-reduced-motion
@@ -277,3 +300,53 @@ input[type="checkbox"]:first-of-type:focus-visible ~ main section:first-of-type 
 The focus state becomes active when you move through the elements with tab. A menu section can be opened by pressing the space bar. The effect looks like this:
 
 ![focus state menu items](https://user-images.githubusercontent.com/60745347/109814428-c9264380-7c2e-11eb-99dd-b549c561cc5c.gif)
+
+### Things I learned
+I've really learned a lot of new things recently that are possible with CSS. Below is a list of all kinds of CSS techniques that were new to me or that I had used very little.
+
+- @font-face import
+- Custom variables
+- Flex
+- Text & Box shadow
+- CSS filters (hue-rotate, saturate, brightness)
+- Keyframe animations
+- Transitions 
+- Clamp
+- Perspective
+- transform (skew, etc...)
+- translateZ (3D space)
+- (Negative) animation delay
+- CSS interactions with checkboxes
+- :focus-visible
+- ~ (sibling selector)
+- ::before & ::after
+- prefers-reduced-motion
+- prefers-reduced-data
+- And more... (like performance testing and CSS triggers)
+
+I added many animations to my website, and in doing so learned a lot about the power of animations as well as the disadvantages. Adding transitions and animations can add a lot of personality to a site, which is definitely something I want to take into future projects. Also the diversity in media queries and the power they can have on making your website accessible. It's fun to experiment with a media query that there is little information about yet and that is not used in the wild. 
+
+## 📚 Sources
+- **HTML structure** provided by teachers. Based on HTML structure from a CodePen. View the CodePen [here](https://codepen.io/julesforrest/pen/VqXvgQ).
+- **Using own hosted fonts** article by Chris Coyier on Aug 10, 2009 from [CSStricks](https://css-tricks.com/snippets/css/using-font-face/).
+- **Vibur font** designed by Johan Kallas. Used via [Google Fonts](https://fonts.google.com/specimen/Vibur?preview.text_type=custom). 
+- **Yellowtail font** designed by Astigmatic. Used via [Google Fonts](https://fonts.google.com/specimen/Yellowtail?preview.text_type=custom).
+- **Hello Denver font** designed by Good Apples. Used via [1001fonts](https://www.1001fonts.com/hello-denver-display-font.html).
+- **Text-shadow** article by MDN. Read the article [here](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow). 
+- **Box-shadow generator** a tool made by MDN. Use the tool [here](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow).
+- **CSS filters** article by Chris Coyier on Feb 18, 2014 from [CSStricks](https://css-tricks.com/almanac/properties/f/filter/).
+- **CSS animated Neon Sign** CodePen code by user "Nodws". View on [CodePen](https://codepen.io/nodws/pen/bdjwn).
+- **Clamp()** documentation written by MDN. Read the documentation [here](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()).
+- **Complete guide to flexbox** article written by Chris Coyier on Apr 8, 2013 from [CSStricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- **TranslateZ** documentation written by MDN. Read the documentation [here](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateZ()).
+- **Perspective** documentation by MDN. Read the documentation [here](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective).
+- **Using checkboxes for interaction** lecture by teacher Vasilis.
+- **:focus-visible** additional documentation used via an article on [CSStricks](https://css-tricks.com/almanac/selectors/f/focus-visible/) by Andy Adams on Jan 11, 2019.
+- **Prefers-reduced-motion** documentation written by MDN. Read the documentation [here](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion).
+- **Prefers-reduced-data** draft documentation on MDN. Read it [here](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-data).
+- **Creating websites with prefers-reduced-data** article by Polypane on 27 november 2020. Read the article [here](https://polypane.app/blog/creating-websites-with-prefers-reduced-data/).
+- **CSS browser impact** a tool made by Paul and Surma to know the performance of CSS properties. Use the tool at [CSStriggers.com](https://csstriggers.com/).
+- **MacBook Pro on wooden Desk** mockup (used at the top of this README) via [MockupWorld](https://www.mockupworld.co/free/macbook-pro-on-wooden-desk-mockup/).
+
+## 🔗 License
+This repository is licensed as MIT • ©️ 2021 Lars Ruijs
