@@ -15,10 +15,10 @@ Each week I recorded what I did that week. Below you can see an overview of the 
 
 |  Contents |
 |---|
-| [1️⃣ Week 1](#-week-1)  |
-| [2️⃣ Week 2](#-week-2)  |
-| [3️⃣ Week 3](#-week-3) |
-| [4️⃣ Week 4](#-week-4)  |
+| [1️⃣ Week 1](#1%EF%B8%8F⃣-week-1)  |
+| [2️⃣ Week 2](#2%EF%B8%8F⃣-week-2)  |
+| [3️⃣ Week 3](#3%EF%B8%8F⃣-week-3) |
+| [4️⃣ Week 4](#4%EF%B8%8F⃣-week-4)  |
 | [📚 Sources](#-sources) |
 | [🔗 License](#-license) |
 
